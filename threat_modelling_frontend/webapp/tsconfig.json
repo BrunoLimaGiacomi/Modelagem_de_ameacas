@@ -1,0 +1,14 @@
+{
+  "_comment": "TypeScript configuration que defines project references e path mappings para threat modeling webapp build process",
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}

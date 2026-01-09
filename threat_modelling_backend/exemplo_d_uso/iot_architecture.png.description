@@ -1,0 +1,66 @@
+High Level Description:
+
+This architecture diagram illustrates a cloud-native IoT and data processing platform deployed on AWS. The system is designed to ingest data from IoT devices and client applications, enforce security at the edge, process data asynchronously, and support analytics, machine learning, and AI pipelines. It uses a multi-tier VPC architecture with public and private subnets, load balancing, message queues, and specialized data stores.
+
+1. Actors:
+
+1.1. IoT Sensors
+1.2. Client (Web Client)
+1.3. Mobile Client
+
+2. External Entities:
+
+2.1. Azure Active Directory
+2.2. Google Active Directory
+
+3. Data Stores:
+
+3.1. Relational DB: Structured data storage
+3.2. Cache DB: Low-latency caching
+3.3. Object DB: Object storage
+3.4. Document DB: Document-oriented storage
+
+4. Processes:
+
+4.1. AWS WAF: Web application firewall
+4.2. IoT Load Balancer
+4.3. Platform Frontend
+4.4. Platform Backend Load Balancers
+4.5. IoT API
+4.6. Platform APIs
+4.7. Integration Services
+4.8. Queue: Message buffering and decoupling
+4.9. Data Processing Pipeline
+4.10. Machine Learning and AI Pipeline
+4.11. EC2 Auto Scaling: Elastic compute capacity
+
+5. Data Flows:
+
+5.1. From IoT Sensors to AWS WAF, filtering inbound IoT traffic
+5.2. From AWS WAF to IoT Load Balancer
+5.3. From IoT Load Balancer to IoT API
+5.4. From IoT API to Queue for asynchronous ingestion
+5.5. From Queue to Data Processing Pipeline
+5.6. From Data Processing Pipeline to Queue
+5.7. From Queue to Machine Learning and AI Pipeline
+5.8. From Clients (Web and Mobile) to AWS WAF for security inspection
+5.9. From AWS WAF to Platform Frontend
+5.10. From Platform Frontend to Platform Backend Load Balancers
+5.11. From Backend Load Balancers to Platform APIs
+5.12. From Platform APIs to Relational DB
+5.13. From Platform APIs to Cache DB
+5.14. From Platform APIs to Object DB
+5.15. From Platform APIs to Document DB
+5.16. From Platform APIs to Integration Services
+5.17. From Clients to Identity Provider (Azure AD / Google AD) for SSO authentication
+
+6. Trust Boundaries:
+
+6.1. User and device boundary: Between Clients / IoT Sensors and AWS WAF
+6.2. Authentication boundary: Between Clients and external Identity Providers
+6.3. Public subnet boundary: Encompasses WAF, IoT Load Balancer, and Platform Frontend
+6.4. Private subnet boundary: Encompasses APIs, Queues, Pipelines, and Data Stores
+6.5. Data processing boundary: Between ingestion queues and processing pipelines
+6.6. AI/ML boundary: Between Data Processing Pipeline and Machine Learning and AI Pipeline
+
+This architecture demonstrates a robust, secure, and scalable IoT and analytics platform that combines edge protection, asynchronous processing, multi-database persistence, and AI-driven insights within a well-defined cloud networking model.

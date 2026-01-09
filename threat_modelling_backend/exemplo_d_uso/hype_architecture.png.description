@@ -1,0 +1,54 @@
+High Level Description:
+
+This architecture diagram illustrates a highly available application platform deployed on a cloud infrastructure, designed to handle user traffic securely and efficiently. The system leverages DNS resolution, firewall protection, floating IPs, load balancing, distributed application instances, caching, relational storage, object storage, and CDN services. It emphasizes redundancy, scalability, and separation of concerns between delivery, processing, and persistence layers.
+
+1. Actors:
+
+1.1. User (represented by a person icon)
+
+2. External Entities:
+
+2.1. DNS Service
+2.2. Spaces CDN (Content Delivery Network)
+
+3. Data Stores:
+
+3.1. Redis: In-memory cache and fast data access
+3.2. MySQL: Relational database
+3.3. Spaces: Object storage
+3.4. Backup Storage: Backup persistence
+3.5. Logs Storage: Centralized logging
+
+4. Processes:
+
+4.1. Firewall: Network security and traffic filtering
+4.2. Floating IP: Entry point abstraction and failover
+4.3. Load Balancer LB-01
+4.4. Load Balancer LB-02
+4.5. Application Server APP-01
+4.6. Application Server APP-02
+
+5. Data Flows:
+
+5.1. From User to DNS, resolving the application domain
+5.2. From DNS to Firewall, enforcing security rules
+5.3. From Firewall to Floating IP, routing inbound traffic
+5.4. From Floating IP to Load Balancers (LB-01 and LB-02)
+5.5. From Load Balancers to Application Servers (APP-01 and APP-02)
+5.6. From Application Servers to Redis for caching and fast access
+5.7. From Application Servers to MySQL for relational data persistence
+5.8. From Application Servers to Spaces for object storage
+5.9. From Spaces to Spaces CDN, distributing static and media content
+5.10. From Spaces CDN back to the User for optimized content delivery
+5.11. From Application Servers to Backup Storage for backups
+5.12. From Application Servers to Logs Storage for operational logging
+
+6. Trust Boundaries:
+
+6.1. User boundary: Between User and DNS
+6.2. Network security boundary: Between DNS and Firewall
+6.3. Infrastructure boundary: Encompasses Floating IP, Load Balancers, and Application Servers
+6.4. Data storage boundary: Between Application Servers and Redis, MySQL, and Spaces
+6.5. Content delivery boundary: Between Spaces and Spaces CDN
+
+This architecture demonstrates a resilient and scalable platform with redundancy at the load balancer and application layers, strong network controls, and clear separation between compute, storage, and content delivery components.
