@@ -165,15 +165,6 @@ myarch.png
 my_arch_description.txt
 ```
 
-Here is how you could, for example, upload the provided samples.
-
-```bash
-aws s3 cp samples/example_architecture.png s3://$(aws cloudformation describe-stacks --stack-name BackendStack --query "Stacks[0].Outputs[?ExportName=='DataBucketName'].OutputValue" --output text)/genai_core_examples/diagram_describer/
-aws s3 cp samples/example_architecture.png.description s3://$(aws cloudformation describe-stacks --stack-name BackendStack --query "Stacks[0].Outputs[?ExportName=='DataBucketName'].OutputValue" --output text)/genai_core_examples/diagram_describer/
-```
-
-(Or you can also do it manually.)
-
 **ATTENTION:** You must upload at least one pair of examples before running the application, otherwise the process will 
 fail silently (no error message is displayed in the frontend).
 
