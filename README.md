@@ -40,7 +40,7 @@ Pull the repository into your EC2:
 
 ```
 git clone -b master https://github.com/BrunoLimaGiacomi/Modelagem_de_ameacas.git
-cd Threat-Modeling
+cd Modelagem_de_ameacas
 git branch
 ```
 
