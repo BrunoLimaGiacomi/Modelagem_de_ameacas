@@ -39,7 +39,7 @@ You will also need valid credentials to your AWS Account to be present in your t
 Pull the repository into your EC2:
 
 ```
-git clone -b master https://github.com/BrunoLimaGiacomi/Modelagem_de_ameacas.git
+git clone -b main https://github.com/BrunoLimaGiacomi/Modelagem_de_ameacas.git
 cd Modelagem_de_ameacas
 git branch
 git pull origin main
