@@ -42,6 +42,7 @@ Pull the repository into your EC2:
 git clone -b master https://github.com/BrunoLimaGiacomi/Modelagem_de_ameacas.git
 cd Modelagem_de_ameacas
 git branch
+git pull origin main
 ```
 
 We recommend you create a virtualenv to manage project dependencies.
